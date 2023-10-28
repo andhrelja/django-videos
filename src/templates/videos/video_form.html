@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body %}
+{% include 'messages.html' %}
+
+<div class="container p-3">
+    <div class="card m-auto border-secondary mb-3">
+        <div class="card-header bg-secondary p-3">
+            <h2 class="h2 text-light mb-0"><strong>{{ _("Upload Video") }}</strong></h2>
+        </div>
+        <div class="card-body p-5">
+            <form method="post" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+                {% include 'forms.html' %}
+                <input type="submit" class="btn btn-primary" value={{ _("Save Video") }}>
+                <a href="{% url 'videos:list' %}" class="btn btn-outline-danger">{{ _("Cancel") }}</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% comment %} <script src="{% static 'js/toggleCarMakes.js' %}"></script> {% endcomment %}
+<script>
+{% comment %} toggleActive("cars"); {% endcomment %}
+
+{% comment %} let makes = {};
+let models = {}; {% endcomment %}
+
+fetch("/videos/categories")
+    .then((categories) => categories.json())
+    .then((categories) => console.log(categories));
+
+</script>
+
+
+{% endblock body %}

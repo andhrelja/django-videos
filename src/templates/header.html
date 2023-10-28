@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" height="20px" style="">
+    <!-- Naslov -->
+    <h3 class="navbar-brand h3 font-weight-bold mb-0 p-2" href="#">{{ _("Django Videos") }}</h3>
+    <!-- End of Naslov -->
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-angle-down text-light"></i>
+    </button>
+    <!-- End of Collapse button -->
+
+    <!-- Collapse content -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav subnav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link d-flex" href="{% url 'videos:list' %}">
+                    <div class="fas-icon subnav">
+                        <i class="fas fa-plus-circle text-light" aria-hidden="true"></i>
+                    </div>
+                    <span>{{ _("Browse Videos") }}</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex" href="{% url 'videos:create' %}">
+                    <div class="fas-icon subnav">
+                        <i class="fas fa-plus-circle text-light" aria-hidden="true"></i>
+                    </div>
+                    <span>{{ _("Upload Video") }}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Collapse content -->
+</nav>
+
+{% include 'messages.html' %}
