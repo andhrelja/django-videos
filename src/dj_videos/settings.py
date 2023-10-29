@@ -108,8 +108,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-LOCALE_PATHS = [BASE_DIR.parent / 'locale']
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -120,6 +118,7 @@ STATICFILES_DIRS = [
     BASE_DIR.parent / 'static',
     # '/var/www/static/'
 ]
+LOCALE_PATHS = [s / 'locale' for s in STATICFILES_DIRS]
 MEDIA_URL = 'media/'
 MEDIA_ROOT = Path('C:\\Users\\AndreaHrelja\\Public\\django-videos\\media')
 
