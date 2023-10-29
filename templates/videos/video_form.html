@@ -22,16 +22,15 @@
 </div>
 
 
-{% comment %} <script src="{% static 'js/toggleCarMakes.js' %}"></script> {% endcomment %}
+<script src="{% static 'js/toggleVideoCategories.js' %}">
+    toggleVideoCategories()
+</script>
 <script>
 {% comment %} toggleActive("cars"); {% endcomment %}
 
 {% comment %} let makes = {};
 let models = {}; {% endcomment %}
 
-fetch("/videos/categories")
-    .then((categories) => categories.json())
-    .then((categories) => console.log(categories));
 
 </script>
 

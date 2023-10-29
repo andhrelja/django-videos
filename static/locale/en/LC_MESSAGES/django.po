@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-29 10:19+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\accounts\models.py:14
+msgid "User type"
+msgstr ""
+
+#: .\templates\forms.html:5
+msgid "Error:"
+msgstr ""
+
+#: .\templates\header.html:3
+msgid "Django Videos"
+msgstr ""
+
+#: .\templates\header.html:20
+msgid "Browse Videos"
+msgstr ""
+
+#: .\templates\header.html:28 .\templates\videos\video_form.html:11
+msgid "Upload Video"
+msgstr ""
+
+#: .\templates\videos\video_confirm_delete.html:12
+msgid "Are you sure you want to delete video this video?"
+msgstr ""
+
+#: .\templates\videos\video_confirm_delete.html:29
+msgid "Yes"
+msgstr ""
+
+#: .\templates\videos\video_confirm_delete.html:30
+msgid "No"
+msgstr ""
+
+#: .\templates\videos\video_detail.html:13
+msgid "Created at "
+msgstr ""
+
+#: .\templates\videos\video_detail.html:41
+msgid "Edit"
+msgstr ""
+
+#: .\templates\videos\video_form.html:17
+msgid "Save Video"
+msgstr ""
+
+#: .\templates\videos\video_form.html:18
+msgid "Cancel"
+msgstr ""
+
+#: .\videos\models.py:8
+msgid "Elementary School"
+msgstr ""
+
+#: .\videos\models.py:9
+msgid "High School"
+msgstr ""
+
+#: .\videos\models.py:12
+msgid "1st year"
+msgstr ""
+
+#: .\videos\models.py:13
+msgid "2nd year"
+msgstr ""
+
+#: .\videos\models.py:14
+msgid "3rd year"
+msgstr ""
+
+#: .\videos\models.py:15
+msgid "4th year"
+msgstr ""
+
+#: .\videos\models.py:16
+msgid "5th year"
+msgstr ""
+
+#: .\videos\models.py:17
+msgid "6th year"
+msgstr ""
+
+#: .\videos\models.py:18
+msgid "7th year"
+msgstr ""
+
+#: .\videos\models.py:19
+msgid "8th year"
+msgstr ""
+
+#: .\videos\models.py:23
+msgid "Name"
+msgstr ""
+
+#: .\videos\models.py:24
+msgid "Description"
+msgstr ""
+
+#: .\videos\models.py:25
+msgid "Ratings"
+msgstr ""
+
+#: .\videos\models.py:26
+msgid "Scholar Seniority"
+msgstr ""
+
+#: .\videos\models.py:27
+msgid "Class"
+msgstr ""
+
+#: .\videos\models.py:36
+msgid "Created at"
+msgstr ""
+
+#: .\videos\models.py:37
+msgid "Updated at"
+msgstr ""
+
+#: .\videos\models.py:38
+msgid "Created by"
+msgstr ""
+
+#: .\videos\models.py:41
+msgid "Video"
+msgstr ""
+
+#: .\videos\models.py:42
+msgid "Videos"
+msgstr ""

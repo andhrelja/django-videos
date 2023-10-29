@@ -13,7 +13,7 @@ class VideoModelForm(forms.ModelForm):
         widgets = {
             "name": forms.TextInput(attrs={'class': 'form-control'}),
             "description": forms.Textarea(attrs={'class': 'form-control'}),
-            "category_type": forms.Select(attrs={'class': 'custom-select'}),
+            "category_type": forms.Select(attrs={'class': 'custom-select', 'onchange': 'toggleVideoCategories()'}),
             "category_subtype": forms.Select(attrs={'class': 'custom-select'}),
             "video": forms.FileInput(attrs={'class': 'form-control'})
         }

@@ -23,8 +23,8 @@ class Video(models.Model):
     name = models.CharField(_("Name"), max_length=512)
     description = models.TextField(_("Description"), blank=True, null=True)
     ratings = models.IntegerField(_("Ratings"), default=0)
-    category_type = models.CharField(_("Scholar Seniority"), choices=CATEGORY_TYPE_CHOICES, max_length=12)
-    category_subtype = models.CharField(_("Class"), choices=CATEGORY_SUBTYPE_CHOICES, max_length=1)
+    category_type = models.CharField(_("Scholar Seniority"), choices=CATEGORY_TYPE_CHOICES, default='ELEMENTARY', max_length=12)
+    category_subtype = models.CharField(_("Class"), choices=CATEGORY_SUBTYPE_CHOICES, default='0', max_length=1)
     video = models.FileField(null=True,
                              upload_to=settings.MEDIA_ROOT,
                              validators=[

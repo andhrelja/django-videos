@@ -3,12 +3,13 @@
 {% block body %}
 
 <div class="container py-3">
-    {% for object in object_list %}
-    <div class="col-md-4 mb-3">
-        {% include "videos/video_card.html" %}
+    <div class="row">
+        {% for object in object_list %}
+        <div class="col-lg-4 mb-3">
+            {% include "videos/video_card.html" %}
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-
 </div>
 
 {% comment %} <script>

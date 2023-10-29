@@ -1,4 +1,4 @@
-# from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 from django.shortcuts import redirect
@@ -38,7 +38,7 @@ class VideoListView(ListView):
 class VideoDetailView(DetailView):
     model = Video
 
-class VideoCreateView(SuccessMessageMixin, CreateView): # LoginRequiredMixin
+class VideoCreateView(SuccessMessageMixin, CreateView, LoginRequiredMixin):
     model = Video
     form_class = VideoModelForm
     success_message = "Video created successfully"
@@ -48,7 +48,7 @@ class VideoCreateView(SuccessMessageMixin, CreateView): # LoginRequiredMixin
         return super(VideoCreateView, self).form_valid(form)
 
 
-class VideoUpdateView(SuccessMessageMixin, UpdateView): # LoginRequiredMixin
+class VideoUpdateView(SuccessMessageMixin, UpdateView, LoginRequiredMixin):
     model = Video
     form_class = VideoModelForm
     success_message = "Video updated successfully"
@@ -58,7 +58,7 @@ class VideoUpdateView(SuccessMessageMixin, UpdateView): # LoginRequiredMixin
         return super(VideoUpdateView, self).form_valid(form)
 
 
-class VideoDeleteView(SuccessMessageMixin, DeleteView): # LoginRequiredMixin
+class VideoDeleteView(SuccessMessageMixin, DeleteView, LoginRequiredMixin):
     model = Video
     success_message = "Video deleted successfully"
     success_url = "/videos/"

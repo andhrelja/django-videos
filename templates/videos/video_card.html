@@ -1,5 +1,5 @@
 <div class="card">
-    <video src="{{ object.video.url }}" style="max-height: 240px" class="card-img-top w-100" controls></video>
+    <video src="{{ object.video.url }}" style="max-height: 200px" class="card-img-top w-100" controls></video>
 
     <div class="card-body">
         <h5 class="card-title">
@@ -12,14 +12,14 @@
     </div>
     <div class="card-footer">
         <div class="row pl-2">
-            <form method="POST" class="ml-1" action="{% url "videos:rate" pk=object.pk rating="plus" %}?next={{ object.get_absolute_url }}">
+            <form method="POST" class="ml-1" action="{% url "videos:rate" pk=object.pk rating="plus" %}?next=/videos">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-success">
                     {% if object.ratings > 0 %}<span class="badge badge-light">{{ object.ratings }}</span>{% endif %}
                     <i class="bi bi-arrow-up"></i>
                 </button>
             </form>
-            <form method="POST" class="ml-1" action="{% url "videos:rate" pk=object.pk rating="minus" %}?next={{ object.get_absolute_url }}">
+            <form method="POST" class="ml-1" action="{% url "videos:rate" pk=object.pk rating="minus" %}?next=/videos">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-danger">
                     {% if object.ratings < 0 %}<span class="badge badge-light">{{ object.ratings }}</span>{% endif %}

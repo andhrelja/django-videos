@@ -16,7 +16,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = "accounts.User"
-VIDEOS_MAX_SIZE_MB = 160
+VIDEO_MAX_SIZE_MB = 160
 
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
@@ -51,7 +51,7 @@ ROOT_URLCONF = 'dj_videos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR.parent / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'dj_videos.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR.parent / 'db.sqlite3',
     }
 }
 
@@ -116,6 +116,10 @@ LOCALE_PATHS = [BASE_DIR.parent / 'locale']
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR.parent / 'staticfiles'
+STATICFILES_DIRS = [
+    BASE_DIR.parent / 'static',
+    # '/var/www/static/'
+]
 MEDIA_URL = 'media/'
 MEDIA_ROOT = Path('C:\\Users\\AndreaHrelja\\Public\\django-videos\\media')
 

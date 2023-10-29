@@ -7,13 +7,13 @@ from .models import (
 def get_categories(request):
     category_names = dict(CATEGORY_TYPE_CHOICES)
     category_classes = dict(CATEGORY_SUBTYPE_CHOICES).values()
-    return JsonResponse(dict(
-        ELEMENTARY=dict(
+    return JsonResponse({
+        "0": dict(
             name=category_names['ELEMENTARY'],
             classes=list(category_classes)
         ),
-        HIGH=dict(
+        "1": dict(
             name=category_names['HIGH'],
             classes=list(category_classes)[:4]
         )
-    ))
+    })
