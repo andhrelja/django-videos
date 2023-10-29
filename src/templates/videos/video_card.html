@@ -1,0 +1,31 @@
+<div class="card">
+    <video src="{{ object.video.url }}" style="max-height: 240px" class="card-img-top w-100" controls></video>
+
+    <div class="card-body">
+        <h5 class="card-title">
+            <a href="{% url "videos:detail" object.pk %}">{{ object.name }}</a>
+        </h5>
+        <div class="card-text">
+            <span class="badge badge-primary">{{ object.get_category_type_display }}</span>
+            <span class="badge badge-secondary">{{ object.get_category_subtype_display }}</span>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="row pl-2">
+            <form method="POST" class="ml-1" action="{% url "videos:rate" pk=object.pk rating="plus" %}?next={{ object.get_absolute_url }}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success">
+                    {% if object.ratings > 0 %}<span class="badge badge-light">{{ object.ratings }}</span>{% endif %}
+                    <i class="bi bi-arrow-up"></i>
+                </button>
+            </form>
+            <form method="POST" class="ml-1" action="{% url "videos:rate" pk=object.pk rating="minus" %}?next={{ object.get_absolute_url }}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">
+                    {% if object.ratings < 0 %}<span class="badge badge-light">{{ object.ratings }}</span>{% endif %}
+                    <i class="bi bi-arrow-down"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

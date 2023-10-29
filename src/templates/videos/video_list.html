@@ -2,25 +2,10 @@
 
 {% block body %}
 
-{% include 'messages.html' %}
-
 <div class="container py-3">
     {% for object in object_list %}
     <div class="col-md-4 mb-3">
-        <div class="card card-link h-100" onclick="location.href='{% url 'videos:detail' object.pk %}'">
-            <div class="card-header p-0">
-                <video max-height="280px" width="100%" controls>
-                    <source src="{{ object.video.url }}" type="video/mp4">
-                </video>
-            </div>
-            <div class="card-body h-100 mb-2">
-                <h4 class="card-title">{{ object.name }}</h4>
-                <p class="card-subtitle">
-                    <i class="fas fa-address-card"></i>
-                    <span>{{ object.ratings }}</span>
-                </p>
-            </div>
-        </div>
+        {% include "videos/video_card.html" %}
     </div>
     {% endfor %}
 

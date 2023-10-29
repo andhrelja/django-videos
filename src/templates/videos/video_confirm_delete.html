@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-12 text-center mb-3">
+            <form method="POST">{% csrf_token %}
+                <div class="card">
+                    <div class="card-body">
+                        <fieldset class="form-group">
+                            <h2>{{ _("Are you sure you want to delete video this video?") }}</h2>
+                            <div class="card m-auto" style="max-width: 720px">
+                                <div class="card-header p-0">
+                                    <video max-height="420px" width="100%" controls>
+                                        <source src="{{ object.video.url }}" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="card-body h-100 mb-2">
+                                    <h4 class="card-title">{{ object.name }}</h4>
+                                    <p class="card-subtitle">
+                                        <i class="fas fa-address-card"></i>
+                                        <span>{{ object.ratings }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">{{ _("Yes") }}</button>
+                            <a href="{% url 'videos:list' %}" class="btn btn-danger">{{ _("No") }}</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% load static %}
+
+{% comment %} <script type="module">
+import { makeActive } from '{% static 'js/sidenavItemActive.js' %}';
+
+window.onload = makeActive('departmentsSidenav', false, false);
+</script> {% endcomment %}
+
+
+{% endblock body %}

@@ -1,5 +1,7 @@
 # from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
+from django.shortcuts import redirect
 from django.forms import BaseForm
 from django.http.response import HttpResponse
 from .models import Video
@@ -9,17 +11,32 @@ from django.views.generic import (
     DetailView,
     CreateView,
     UpdateView,
-    DeleteView
+    DeleteView,
+    FormView
 )
 
+
+class VideoRateView(SuccessMessageMixin, FormView):
+    success_message = "Video rated successfully"
+    
+    def post(self, request, *args, **kwargs) -> HttpResponse:
+        video = Video.objects.get(pk=kwargs['pk'])
+        if kwargs['rating'] == 'plus':
+            video.ratings += 1
+        else:
+            video.ratings -= 1
+        video.save()
+        
+        messages.success(request, self.success_message)
+        if request.GET.get('next'):
+            return redirect(request.GET.get('next'))
+        return redirect(video.get_absolute_url())
 
 class VideoListView(ListView):
     model = Video
 
-
 class VideoDetailView(DetailView):
     model = Video
-
 
 class VideoCreateView(SuccessMessageMixin, CreateView): # LoginRequiredMixin
     model = Video
